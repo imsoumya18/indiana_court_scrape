@@ -16,17 +16,20 @@ years = ['00', '01', '02', '03', '04', '05', '06', '07', '08', '09', '10',
 
 months = ['00', '01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12']
 
-types = ['CF', 'CM', 'CR', 'DF', 'MC', 'MR', 'F1', 'F2', 'F3', 'F4', 'F5', 'F6', 'FA', 'FB', 'FC', 'FD']
+types = ['AD', 'MI', 'DC', 'CC', 'CT', 'DN', 'DR', 'MH', 'EV', 'XP', 'MF', 'SC', 'TP', 'TS', 'PL', 'RS', 'PO', 'PC',
+         'CB', 'MC', 'CM', 'FA', 'FB', 'FC', 'FD', 'F1', 'F2', 'F3', 'F4', 'F5', 'F6', 'MR', 'IF', 'OV', 'JM', 'JS',
+         'JC', 'JD', 'JP', 'JQ', 'JT', 'EU', 'EM', 'ES', 'GU', 'GM', 'TR']
 
 driver = webdriver.Chrome('chromedriver.exe')
 driver.maximize_window()
 driver.get('https://chrome.google.com/webstore/detail/touch-vpn-secure-and-unli/bihmplhobchoageeokmgbdihknkjbknd?hl=en')
 input('Done?')
 driver.get("https://public.courts.in.gov/mycase#/vw/Search")
-driver.find_element_by_id('SearchCaseNumber').send_keys('30D02-1206-CM-000832')
+driver.find_element_by_id('SearchCaseNumber').send_keys('30D02-1206-*')
 driver.find_element_by_xpath('//button[contains(text(),"Search")]').click()
 time.sleep(5)
-print(driver.page_source)
-f = open('30D02-1206-CM-000832' + '.txt', 'a')
-f.write(driver.page_source)
-f.close()
+driver.find_elements_by_xpath('//button[@title="Go to next result page"]')[1].click()
+# print(driver.page_source)
+# f = open('30D02-1206-CM-000832' + '.txt', 'a')
+# f.write(driver.page_source)
+# f.close()
