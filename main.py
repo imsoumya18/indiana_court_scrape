@@ -25,11 +25,18 @@ driver.maximize_window()
 driver.get('https://chrome.google.com/webstore/detail/touch-vpn-secure-and-unli/bihmplhobchoageeokmgbdihknkjbknd?hl=en')
 input('Done?')
 driver.get("https://public.courts.in.gov/mycase#/vw/Search")
-driver.find_element_by_id('SearchCaseNumber').send_keys('30D02-1206-*')
+driver.find_element_by_id('SearchCaseNumber').send_keys('30D02-*')
 driver.find_element_by_xpath('//button[contains(text(),"Search")]').click()
-time.sleep(5)
-driver.find_elements_by_xpath('//button[@title="Go to next result page"]')[1].click()
+time.sleep(10)
+pro = 1
+for i in range(36):
+    for j in driver.find_elements_by_xpath('//span[@title="Case Number"]'):
+        print(str(pro) + '. ' + j.text)
+        pro += 1
+    driver.find_elements_by_xpath('//button[@title="Go to next result page"]')[1].click()
+    time.sleep(10)
 # print(driver.page_source)
+
 # f = open('30D02-1206-CM-000832' + '.txt', 'a')
 # f.write(driver.page_source)
 # f.close()
