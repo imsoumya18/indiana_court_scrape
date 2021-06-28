@@ -20,21 +20,32 @@ types = ['AD', 'MI', 'DC', 'CC', 'CT', 'DN', 'DR', 'MH', 'EV', 'XP', 'MF', 'SC',
          'CB', 'MC', 'CM', 'FA', 'FB', 'FC', 'FD', 'F1', 'F2', 'F3', 'F4', 'F5', 'F6', 'MR', 'IF', 'OV', 'JM', 'JS',
          'JC', 'JD', 'JP', 'JQ', 'JT', 'EU', 'EM', 'ES', 'GU', 'GM', 'TR']
 
+cases = []
+
 driver = webdriver.Chrome('chromedriver.exe')
 driver.maximize_window()
 driver.get('https://chrome.google.com/webstore/detail/touch-vpn-secure-and-unli/bihmplhobchoageeokmgbdihknkjbknd?hl=en')
 input('Done?')
 driver.get("https://public.courts.in.gov/mycase#/vw/Search")
-driver.find_element_by_id('SearchCaseNumber').send_keys('30D02-*')
+driver.find_element_by_id('SearchCaseNumber').send_keys('01D01-04*')
 driver.find_element_by_xpath('//button[contains(text(),"Search")]').click()
-time.sleep(10)
-pro = 1
+time.sleep(5)
+count = 1
 for i in range(36):
-    for j in driver.find_elements_by_xpath('//span[@title="Case Number"]'):
-        print(str(pro) + '. ' + j.text)
-        pro += 1
+    try:
+        for j in driver.find_elements_by_xpath('//span[@title="Case Number"]'):
+            print(str(count) + '. ' + j.text)
+            cases.append(j.text)
+            count += 1
+    except:
+        time.sleep(5)
+        for j in driver.find_elements_by_xpath('//span[@title="Case Number"]'):
+            print(str(count) + '. ' + j.text)
+            cases.append(j.text)
+            count += 1
     driver.find_elements_by_xpath('//button[@title="Go to next result page"]')[1].click()
-    time.sleep(10)
+    time.sleep(3)
+print(cases)
 # print(driver.page_source)
 
 # f = open('30D02-1206-CM-000832' + '.txt', 'a')
