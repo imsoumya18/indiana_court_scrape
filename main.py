@@ -27,11 +27,11 @@ driver.maximize_window()
 driver.get('https://chrome.google.com/webstore/detail/touch-vpn-secure-and-unli/bihmplhobchoageeokmgbdihknkjbknd?hl=en')
 input('Done?')
 driver.get("https://public.courts.in.gov/mycase#/vw/Search")
-driver.find_element_by_id('SearchCaseNumber').send_keys('01D01-05*')
+driver.find_element_by_id('SearchCaseNumber').send_keys('02D08-20*')
 driver.find_element_by_xpath('//button[contains(text(),"Search")]').click()
 time.sleep(5)
 count = 1
-for i in range(41):
+for i in range(38):
     try:
         for j in driver.find_elements_by_xpath('//span[@title="Case Number"]'):
             print(str(count) + '. ' + j.text)
@@ -44,7 +44,7 @@ for i in range(41):
             cases.append(j.text)
             count += 1
     driver.find_elements_by_xpath('//button[@title="Go to next result page"]')[1].click()
-    time.sleep(3)
+    time.sleep(4)
 print(cases)
 # print(driver.page_source)
 
