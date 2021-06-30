@@ -1,0 +1,820 @@
+<html lang="en" style="" class=" json queryselector svg es5array es5date es5function es5string canvas hashchange lastchild mediaqueries csstransforms"><head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="nofollow, noimageindex, noarchive, noodp, noydir">
+    <meta name="description" content="Indiana Supreme Court, Public Access">
+    <meta name="author" content="Indiana Office of Judicial Administration - Court Technology Group">
+    <meta name="copyright" content="Indiana Office of Judicial Administration">
+    <meta name="city" content="Indianapolis">
+    <meta name="country" content="USA">
+    <link rel="icon" href="https://public.courts.in.gov/favicon.ico">
+    <title>Case Search - MyCase</title>
+	<!--[if lte IE 9]><script type="text/javascript">window.location = 'https://public.courts.in.gov/mycase/PAError/LegacyBrowser';</script><![endif]-->
+    <script async="" src="//www.google-analytics.com/analytics.js"></script><script type="text/javascript">(function () { try { var e = document.documentElement, s = (e || {}).style, m = document.documentMode; if (('msScrollLimit' in s || 'behavior' in s) && (!isNaN(m) && m >= 4 && m <= 10)) window.location = 'https://public.courts.in.gov/mycase/PAError/LegacyBrowser'; } catch (f) { } })();</script>
+	
+    
+
+    <link href="https://foundations.jtac.in.gov/CDN/PublicAccessV3/v3_0_1/css/master.min.css" rel="stylesheet">
+     <link href="/mycase/Content/css/All?v=d_XIVu6L9thYWYID0Y4k-EDS2aTLG4ADMqrVPTLwLc81" rel="stylesheet">
+ 
+
+    <script type="text/javascript" src="https://foundations.jtac.in.gov/CDN/PublicAccessV3/v3_0_1/js/libs.min.js"></script>
+<script type="text/javascript" src="https://foundations.jtac.in.gov/CDN/PublicAccessV3/v3_0_1/js/framework.min.js"></script>
+    <script type="text/javascript"> for (var p in Modernizr) { if (typeof Modernizr[p] === 'boolean' && Modernizr[p] !== true) { window.location = 'https://public.courts.in.gov/mycase/PAError/LegacyBrowser'; } } </script>
+    
+    
+    <script src="/mycase/Scripts/All?v=tNAn-6ugEla6yBALjajtgISskU7m5i7jSys33vGcFZ41"></script>
+
+    <script src="/mycase/ODScripts/All?v=DVi89HrGoUoTfBDUq-DqfQzpf6ljuSVktcfNtWqIup01"></script>
+
+
+    <script type="text/javascript"> ct.pa.init('https://public.courts.in.gov/', 'MyCase', 'https://public.courts.in.gov/mycase/', '/mycase/'); </script>
+     
+<script type="text/javascript"> $(document).ready(function () { od.app.init('OD_BODY'); }); </script> 
+
+</head>
+<body>
+    <!-- #region Header -->
+
+    <!-- Static top navbar -->
+    <nav class="framework-header navbar navbar-inverse navbar-static-top hidden-print" role="presentation" aria-disabled="true" aria-hidden="true" tabindex="-1">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="https://public.courts.in.gov/mycase/" title="View public home page" tabindex="-1">
+                    <span class="pa-logo">&nbsp;</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Static top sub navbar -->
+    <div class="nav-subrow hidden-print">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    &nbsp;
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- #endregion Header -->
+
+    
+    <span class="loader load-smaller text-hide hidden"></span><span class="loader search-large text-hide hidden"></span>
+    <div id="OD_BODY" role="main">
+    <!-- ko if: (!ct.isNull(ob) && !ct.isNull(ob.ActiveView())) -->
+        <!-- ko template: { name: 'CurrentUser', templateUrl: ct.url.combine(od.settings.TemplateRoot, '/User'), as: 'UserView' } --><div id="user-info" class="container">
+    <span class="text-nowrap small">
+        <!-- ko ifnot: od.app.user.LoggedIn -->
+            <!-- ko ifnot: od.app.user.Refreshing -->
+                <span class="fa fa-user text-muted pad-right-3" aria-hidden="true"></span>
+                <a data-bind="attr: { href: od.settings.LoginUrlFull + '?ReturnUrl=' + encodeURIComponent(ct.pa.ModuleUrlFull) }" href="https://public.courts.in.gov/Portal/Account/Login?ReturnUrl=https%3A%2F%2Fpublic.courts.in.gov%2Fmycase%2F">
+                    Attorney Sign In
+                </a>
+            <!-- /ko -->
+            <!-- ko if: od.app.user.Refreshing --><!-- /ko -->
+        <!-- /ko -->
+        <!-- ko if: od.app.user.LoggedIn --><!-- /ko -->
+    </span>        
+</div><!-- /ko -->
+    <!-- /ko -->
+
+
+    <!-- #region Bulletin -->
+    <div class="container hidden-print">
+
+	<!-- Start covid bulletin -->
+    <div class="row margin-top-10" role="note">
+        <div class="col-xs-12">
+            <div class="alert alert-info pad-all-7 margin-top-8 margin-bottom-0" role="alert">
+                <table>
+                    <tbody><tr>
+                        <td class="va-top pad-all-0 margin-all-0">
+                            <span class="glyphicon glyphicon-info-sign va-text-bottom" style="font-size: 1.1em;" aria-hidden="true"></span>
+                        </td>
+                        <td class="va-top pad-all-0 pad-left-10 margin-all-0">
+                            <span>							          
+                                Go to <a href="http://courts.in.gov/covid" target="_blank"><b>courts.in.gov/covid</b></a> to learn about how
+                                courts around the state are responding to COVID-19, adjusting operations, and preparing courthouses
+                                for public access.                
+                            </span>
+                        </td>
+                    </tr>
+                </tbody></table>
+            </div>
+        </div>
+    </div>
+	<!-- End covid bulletin -->
+	
+	<!-- Start Eviction bulletin -->
+    <div class="row margin-top-5" role="note">
+        <div class="col-xs-12">
+            <div class="alert alert-info pad-all-7 margin-top-8 margin-bottom-0" role="alert">
+                <table>
+                    <tbody><tr>
+                        <td class="va-top pad-all-0 margin-all-0">
+                            <span class="glyphicon glyphicon-info-sign va-text-bottom" style="font-size: 1.1em;" aria-hidden="true"></span>
+                        </td>
+                        <td class="va-top pad-all-0 pad-left-10 pad-top-2 margin-all-0">
+                            <span>
+								<a href="https://www.in.gov/judiciary/selfservice/files/lt-flyer.pdf" target="_blank"><b>Important Eviction Information</b>:</a>
+								<a href="https://www.in.gov/judiciary/selfservice/files/lt-flyer.pdf" target="_blank"><u>Open</u></a>
+                            </span>
+                        </td>
+                    </tr>
+                </tbody></table>
+            </div>
+        </div>
+    </div>
+	<!-- End eviction bulletin -->
+	
+	<!-- Start county conversion bulletin -->
+	<!--
+	<div class="row margin-top-5" role="note">
+        <div class="col-xs-12">
+            <div class="alert alert-info pad-all-7 margin-top-8 margin-bottom-0" role="alert">
+                <table>
+                    <tr>
+                        <td class="va-top pad-all-0 margin-all-0">
+                            <span class="glyphicon glyphicon-info-sign va-text-bottom" style="font-size: 1.1em;" aria-hidden="true"></span>
+                        </td>
+                        <td class="va-top pad-all-0 pad-left-10 margin-all-0">
+                            <span>							          
+                                MyCase will be intermittently offline on Saturday between 5:00am and 10:00pm EST while we perform scheduled maintenance.
+                            </span>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div> 
+	-->
+	<!-- End county conversion bulletin -->
+</div>
+    <!-- #endregion Bulletin -->
+
+    <!-- #region Body -->
+    
+
+<!-- #region Content Body -->
+<!-- ko if: (!ct.isNull(ob) && !ct.isNull(ob.ActiveView())) -->
+<!-- ko template: { name: ob.ActiveView().ViewName, data: ob.ActiveView(), templateUrl: ob.ActiveView().TemplateURL, as: 'View' } -->
+
+<!-- #region View markup -->
+
+
+
+<!-- ko if: ob.Visible -->
+
+
+
+<!-- #region Page Title -->
+
+<div class="container">       
+    
+    <div class="page-header" role="heading">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Case Search</h2>
+            </div>
+            <div class="col-md-12">
+                <table role="presentation">
+                    <tbody><tr>
+                        <td class="one">                            
+                            Search for non-confidential cases in <a href="http://www.in.gov/judiciary/4234.htm" target="_blank" title="View Indiana courts that use Odyssey">Indiana courts</a> that use the Odyssey case management system. 
+                            This site replaces the original version previously available at mycase.in.gov. 
+                            <br class="visible-xs-inline visible-lg-inline">
+                            <a href="https://www.surveymonkey.com/r/mycaseingov2" target="_blank" title="Give feedback about the new site">Tell us what you think</a> of the new site.                            
+                        </td>
+                        <td class="two">
+                            <a href="http://www.in.gov/judiciary/4379.htm" class="help-link" tabindex="0" role="button" target="_blank" title="View help">
+                                <span class="icon24 help">&nbsp;</span>
+                            </a>
+                        </td>
+                    </tr>
+                </tbody></table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- #endregion Page Title -->
+
+<!-- #region Search Form -->
+
+<div class="container">
+
+    <!-- #region Search Tabs -->
+
+    <label id="srLabelSearchBy" class="sr-only" for="searchByTabs">Search by</label>
+
+    <ul id="searchByTabs" class="nav nav-tabs" role="tablist" aria-labelledby="srLabelSearchBy">
+        <li role="presentation">
+            <span class="text-muted" role="presentation">Search by:</span>
+        </li>
+        <li role="presentation" data-bind="css: { 'active': (form.Mode() === 'ByCase') }" class="active">
+            <a href="javascript:void(0)" role="tab" title="Find cases by searching case information." data-bind="click: modeClick.bind($data,'ByCase')">
+                Case
+            </a>
+        </li>
+        <li role="presentation" data-bind="css: { 'active': (form.Mode() === 'ByParty') }">
+            <a href="javascript:void(0)" role="tab" title="Find cases by searching party information." data-bind="click: modeClick.bind($data,'ByParty')">
+                Name
+            </a>
+        </li>
+        <li role="presentation" data-bind="css: { 'active': (form.Mode() === 'ByAttorney') }">
+            <a href="javascript:void(0)" role="tab" title="Find cases by searching attorney information." data-bind="click: modeClick.bind($data,'ByAttorney')">
+                Attorney
+            </a>
+        </li>
+    </ul>
+
+    <!-- #endregion Search Tabs -->
+
+    <!-- #region Simple Search -->
+
+    <div role="tabpanel" class="panel panel-default panel-tab-body">
+        <div class="panel-body" role="form">
+            <!-- ko template: { name: comp.SearchByTmpl, data: form, as: 'model' } -->
+        
+    <span class="sr-only">
+        Enter a case number, or a citation number, or a cross reference number.
+    </span>
+    
+    <div class="row">
+
+        <div class="col-xs-12 col-sm-2" role="presentation" aria-hidden="true">
+            <label class="text-muted pad-top-4 text-nowrap">Case Number</label>
+        </div>
+
+        <div class="col-xs-11 col-xs-offset-1 col-sm-4 col-sm-offset-0 col-md-4 col-lg-3">
+            <span class="sr-only" data-bind="labelFor: model.CaseNum" for="id1015BFC1">Case Number</span>
+            <input type="text" id="SearchCaseNumber" class="form-control" placeholder="case number" data-bind="textbox: { value: model.CaseNum, maxLen: 30, onEnter: $parent.searchClick }, focus: true" autocomplete="on" maxlength="30">
+        </div>
+    </div>
+
+    <p class="clearfix"></p>
+
+    <div class="row">
+        <div class="col-xs-12">
+            <span class="text-muted text-nowrap">-or-</span>
+        </div>
+    </div>
+
+    <p class="clearfix"></p>
+
+    <div class="row">
+
+        <div class="col-xs-12 col-sm-2 col-md-2" role="presentation" aria-hidden="true">
+            <label class="text-muted pad-top-4 text-nowrap">Citation Number</label>
+        </div>
+
+        <div class="col-xs-11 col-xs-offset-1 col-sm-4 col-sm-offset-0 col-md-4 col-lg-3">
+            <span class="sr-only" data-bind="labelFor: model.CiteNum" for="id102E71A8">Citation Number</span>
+            <input type="text" class="form-control" placeholder="citation number" data-bind="textbox: { value: model.CiteNum, maxLen: 30, onEnter: $parent.searchClick }" maxlength="30" id="id102E71A8">
+        </div>
+    </div>
+
+    <p class="clearfix"></p>
+
+    <div class="row">
+        <div class="col-xs-12">
+            <span class="text-muted text-nowrap">-or-</span>
+        </div>
+    </div>
+
+    <p class="clearfix"></p>
+
+    <div class="row">
+
+        <div class="col-xs-12 col-sm-2 col-md-2" role="presentation" aria-hidden="true">
+            <label class="text-muted pad-top-4 text-nowrap">Cross Reference</label>
+        </div>
+
+        <div class="col-xs-11 col-xs-offset-1 col-sm-4 col-sm-offset-0 col-md-4 col-lg-3">
+            <span class="sr-only" data-bind="labelFor: model.CrossRefNum" for="id1036EEE1">Cross Reference Number</span>
+            <input type="text" class="form-control" placeholder="cross reference number" data-bind="textbox: { value: model.CrossRefNum, maxLen: 30, onEnter: $parent.searchClick }" maxlength="30" id="id1036EEE1">
+        </div>
+    </div>
+        
+<!-- /ko -->
+        </div>
+    </div>    
+    
+    <!-- #endregion Simple Search -->
+    
+    <!-- #region SoundEx -->
+
+    <!-- ko if: comp.ShowSoundEx --><!-- /ko -->
+
+    <!-- #endregion SoundEx -->
+
+    <!-- #region Common search options -->
+    
+    <!-- ko if: ob.Loading --><!-- /ko -->
+
+    <!-- ko ifnot: ob.Loading -->
+
+    <div id="commonContainer" role="tabpanel" class="panel panel-default panel-tab-body leaf-panel">
+        <div class="panel-body" role="form">
+
+            <!-- #region Court -->
+
+            <div class="row">
+                <div class="col-xs-12 col-sm-2">
+                    <label class="text-muted" data-bind="labelFor: form.Court">Court</label>
+                </div>
+
+                <p class="clearfix-xs no-margin"></p>
+
+                <!-- ko if: ob.Loading --><!-- /ko -->
+                <!-- ko ifnot: ob.Loading -->
+                <div class="col-xs-11 col-xs-offset-1 col-sm-5 col-sm-offset-0 col-md-4">
+                    <select class="form-control" data-bind="dropdown: { value: form.CourtItemID, options: ob.Courts, optionsText: 'Text', optionsValue: 'ID' }" id="id104360EC"><option value="92">All Odyssey Courts</option><option value="93">All Commercial Courts</option><option value="94">All Appellate Courts</option><option value="95">Court of Appeals</option><option value="96">Supreme Court</option><option value="97">Tax Court</option><option value="231">Adams County</option><option value="98">Allen County</option><option value="99">Allen County - New Haven City Court</option><option value="187">Bartholomew County</option><option value="100">Benton County</option><option value="101">Blackford County</option><option value="189">Boone County</option><option value="102">Boone County - Zionsville Town Court</option><option value="247">Brown County</option><option value="103">Carroll County</option><option value="104">Carroll County - Delphi City Court</option><option value="105">Cass County</option><option value="106">Clark County</option><option value="185">Clark County - Clarksville Town Court</option><option value="230">Clay County</option><option value="220">Clinton County</option><option value="107">Clinton County - Frankfort City</option><option value="108">Crawford County</option><option value="232">Daviess County</option><option value="197">Dearborn County</option><option value="109">Dearborn County - Lawrenceburg City Court</option><option value="237">Decatur County</option><option value="110">DeKalb County</option><option value="111">Delaware County</option><option value="191">Delaware County - Muncie City Court</option><option value="228">Dubois County</option><option value="112">Elkhart County</option><option value="246">Elkhart County - Elkhart City Court</option><option value="195">Elkhart County - Goshen City Court</option><option value="113">Elkhart County - Nappanee City Court</option><option value="114">Fayette County</option><option value="115">Floyd County</option><option value="116">Fountain County</option><option value="117">Fountain County - Attica City Court</option><option value="118">Franklin County</option><option value="193">Fulton County</option><option value="119">Gibson County</option><option value="120">Grant County</option><option value="121">Grant County - Gas City City Court</option><option value="122">Grant County - Marion City Court</option><option value="123">Greene County</option><option value="124">Hamilton County</option><option value="125">Hamilton County - Carmel City Court</option><option value="126">Hamilton County - Fishers City Court</option><option value="127">Hamilton County - Fishers Town Court</option><option value="190">Hamilton County - Noblesville City Court</option><option value="128">Hancock County</option><option value="129">Harrison County</option><option value="130">Hendricks County</option><option value="131">Hendricks County - Brownsburg Town Court</option><option value="132">Hendricks County - Plainfield Town Court</option><option value="133">Henry County</option><option value="209">Howard County</option><option value="134">Huntington County</option><option value="135">Huntington County - Roanoke Town Court</option><option value="136">Jackson County</option><option value="137">Jasper County</option><option value="242">Jay County</option><option value="253">Jefferson County</option><option value="138">Jennings County</option><option value="139">Johnson County</option><option value="140">Johnson County - Franklin City Court</option><option value="141">Johnson County - Greenwood City Court</option><option value="142">Knox County</option><option value="143">Knox County - Bicknell City Court</option><option value="229">Kosciusko County</option><option value="249">LaGrange County</option><option value="206">Lake County</option><option value="223">Lake County - Crown Point City Court</option><option value="224">Lake County - East Chicago City Court</option><option value="205">Lake County - Gary City Court</option><option value="221">Lake County - Hobart City Court</option><option value="245">Lake County - Lake Station City Court</option><option value="244">Lake County - Lowell Town Court</option><option value="225">Lake County - Merrillville Town Court</option><option value="222">Lake County - Schererville Town Court</option><option value="144">LaPorte County</option><option value="198">Lawrence County</option><option value="145">Madison County</option><option value="240">Madison County - Edgewood Town Court</option><option value="241">Madison County - Elwood City Court</option><option value="194">Madison County - Pendleton Town Court</option><option value="146">Marion County</option><option value="186">Marion County - Small Claims Courts</option><option value="147">Marion County - Beech Grove City Court</option><option value="148">Marion County - Center Township</option><option value="149">Marion County - Cumberland Town Court</option><option value="202">Marion County - Decatur Township</option><option value="150">Marion County - Franklin Township</option><option value="151">Marion County - Lawrence Township</option><option value="152">Marion County - Perry Township</option><option value="192">Marion County - Pike Township</option><option value="153">Marion County - Warren Township</option><option value="154">Marion County - Washington Township</option><option value="155">Marion County - Wayne Township</option><option value="188">Marshall County</option><option value="248">Martin County</option><option value="218">Miami County</option><option value="157">Monroe County</option><option value="203">Montgomery County</option><option value="158">Morgan County</option><option value="233">Newton County</option><option value="250">Noble County</option><option value="196">Ohio County</option><option value="159">Orange County</option><option value="160">Owen County</option><option value="161">Parke County</option><option value="162">Perry County</option><option value="219">Pike County</option><option value="163">Porter County</option><option value="164">Posey County</option><option value="238">Pulaski County</option><option value="214">Putnam County</option><option value="165">Randolph County - Union City City Court</option><option value="184">Randolph County - Winchester City Court</option><option value="199">Ripley County</option><option value="167">Rush County</option><option value="168">Scott County</option><option value="169">Shelby County</option><option value="243">Spencer County</option><option value="170">St. Joseph County</option><option value="171">St. Joseph County - Walkerton Town Court</option><option value="172">Starke Circuit Court</option><option value="173">Starke County - Knox City Court</option><option value="174">Steuben County</option><option value="226">Sullivan County</option><option value="175">Tippecanoe County</option><option value="251">Tippecanoe County - West Lafayette City Court</option><option value="176">Tipton County</option><option value="177">Tipton County - Tipton City Court</option><option value="178">Union County</option><option value="179">Vanderburgh County</option><option value="252">Vermillion County</option><option value="180">Vigo County</option><option value="181">Vigo County - Terre Haute City Court</option><option value="212">Wabash County</option><option value="182">Warren County</option><option value="183">Washington County</option><option value="207">Wayne County</option><option value="216">Wells County</option><option value="239">White County</option><option value="227">Whitley County</option></select>
+                </div>
+                <!-- /ko -->
+            </div>
+
+            <!-- #endregion Court -->
+                        
+            
+            <!-- ko ifnot: Categories.Hidden -->
+                <!-- ko with: Categories  -->
+                    <!-- ko if: anyVisible -->
+
+                        <p class="clearfix"></p>
+                
+                        <div class="row">
+                    
+                            <div class="col-xs-12 col-sm-2">
+                                <label class="text-muted">
+                                    Limit <br class="visible-sm-inline">search to
+                                </label>
+                            </div>
+                    
+                            <div class="col-xs-12 col-sm-10">
+                                <div class="row" data-bind="foreach: { data: keys(), as: 'key' }">
+                                    <!-- ko with: $parent.Items[key] -->
+                                        <!-- ko ifnot: hidden -->
+                                            <div class="col-xs-11 col-xs-offset-1 col-sm-12 col-sm-offset-0">
+                                                <div class="checkbox margin-top-3 margin-bottom-3" data-bind="disable2: { disabled: disabled, css: ['text-muted-lite'] }">
+                                                    <label>
+                                                        <input type="checkbox" data-bind="checked: checked, disable2: disabled">
+                                                        <span data-bind="html: title">Criminal &amp; Citation</span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        <!-- /ko -->
+                                    <!-- /ko -->
+                                
+                                    <!-- ko with: $parent.Items[key] -->
+                                        <!-- ko ifnot: hidden -->
+                                            <div class="col-xs-11 col-xs-offset-1 col-sm-12 col-sm-offset-0">
+                                                <div class="checkbox margin-top-3 margin-bottom-3" data-bind="disable2: { disabled: disabled, css: ['text-muted-lite'] }">
+                                                    <label>
+                                                        <input type="checkbox" data-bind="checked: checked, disable2: disabled">
+                                                        <span data-bind="html: title">Civil</span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        <!-- /ko -->
+                                    <!-- /ko -->
+                                
+                                    <!-- ko with: $parent.Items[key] -->
+                                        <!-- ko ifnot: hidden -->
+                                            <div class="col-xs-11 col-xs-offset-1 col-sm-12 col-sm-offset-0">
+                                                <div class="checkbox margin-top-3 margin-bottom-3" data-bind="disable2: { disabled: disabled, css: ['text-muted-lite'] }">
+                                                    <label>
+                                                        <input type="checkbox" data-bind="checked: checked, disable2: disabled">
+                                                        <span data-bind="html: title">Family</span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        <!-- /ko -->
+                                    <!-- /ko -->
+                                
+                                    <!-- ko with: $parent.Items[key] -->
+                                        <!-- ko ifnot: hidden -->
+                                            <div class="col-xs-11 col-xs-offset-1 col-sm-12 col-sm-offset-0">
+                                                <div class="checkbox margin-top-3 margin-bottom-3" data-bind="disable2: { disabled: disabled, css: ['text-muted-lite'] }">
+                                                    <label>
+                                                        <input type="checkbox" data-bind="checked: checked, disable2: disabled">
+                                                        <span data-bind="html: title">Probate</span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        <!-- /ko -->
+                                    <!-- /ko -->
+                                </div>
+                            </div>                
+                        </div>                        
+                    <!-- /ko -->
+                <!-- /ko -->
+            <!-- /ko -->
+
+
+            <!-- ko with: Limits  -->
+
+                <!-- ko if: anyVisible -->
+                    <p class="clearfix hidden" data-bind="css: { 'hidden': $parent.Categories.anyVisible }"></p>
+                
+                    <div class="row">
+                    
+                        <!-- ko if: $parent.Categories.anyVisible -->
+                        <div class="col-xs-12 col-sm-2 hidden-xs">
+                            <label class="text-muted">
+                                &nbsp;
+                            </label>
+                        </div>
+                        <!-- /ko -->
+
+                        <!-- ko ifnot: $parent.Categories.anyVisible --><!-- /ko -->
+                        
+                        <div class="col-xs-12 col-sm-10">
+                            <div class="row" data-bind="foreach: { data: keys(), as: 'key' }">
+                                <!-- ko with: $parent.Items[key] -->
+                                    <!-- ko ifnot: hidden -->
+                                        <div class="col-xs-11 col-xs-offset-1 col-sm-12 col-sm-offset-0">
+                                            <div class="checkbox margin-top-3 margin-bottom-3" data-bind="disable2: { disabled: disabled, css: ['text-muted-lite'] }">
+                                                <label>
+                                                    <input type="checkbox" data-bind="checked: checked, disable2: disabled">
+                                                    <span data-bind="html: title">Appellate</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    <!-- /ko -->
+                                <!-- /ko -->
+                            
+                                <!-- ko with: $parent.Items[key] -->
+                                    <!-- ko ifnot: hidden -->
+                                        <div class="col-xs-11 col-xs-offset-1 col-sm-12 col-sm-offset-0">
+                                            <div class="checkbox margin-top-3 margin-bottom-3" data-bind="disable2: { disabled: disabled, css: ['text-muted-lite'] }">
+                                                <label>
+                                                    <input type="checkbox" data-bind="checked: checked, disable2: disabled">
+                                                    <span data-bind="html: title">Commercial</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    <!-- /ko -->
+                                <!-- /ko -->
+                            </div>
+                        </div>                
+                    </div>                        
+                <!-- /ko -->
+            <!-- /ko -->
+            
+        </div>
+    </div>
+
+    <!-- /ko -->
+
+    <!-- #endregion Common search options -->
+    
+    <!-- #region Advanced Search -->
+
+    <div role="tabpanel" class="panel panel-default panel-tab-body leaf-panel">
+        <div class="panel-body" role="form">
+
+            <div class="row">
+                <div class="col-xs-12">                    
+                    
+                <!-- ko if: form.Advanced --><!-- /ko -->
+
+                <!-- ko ifnot: form.Advanced -->
+
+                <a class="no-text-decor" role="button" href="javascript:void(0)" aria-expanded="false" aria-controls="collapseAdvanced" title="Display advanced search options" data-bind="click: advancedClick">
+                    <span class="glyphicon glyphicon-collapse-down" aria-hidden="true"></span>
+                    <span class="hover-underline">Advanced Search Options</span>
+                </a>
+
+                <!-- /ko -->
+                                                                                
+                </div>
+            </div>
+
+            <!-- ko if: form.Advanced --><!-- /ko -->
+        </div>
+    </div>
+
+    <!-- #endregion Advanced Search -->
+</div>
+
+<!-- #endregion Search Form -->
+
+<!-- #region Footer -->
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            
+            <div data-bind="css: { 'pull-left': ob.Loading }">
+                <button type="submit" class="btn btn-default" data-bind="click: searchClick, disable: comp.SubmitDisabled">Search</button>
+            </div>
+            <!-- ko if: ob.Loading --><!-- /ko -->
+        </div>
+    </div>
+</div>
+
+<!-- #endregion Footer -->
+
+<!-- /ko -->
+
+<!-- #endregion View markup -->
+
+<!-- #region SearchBy Templates -->
+
+<script type="text/html" id="tmplByCase">
+        
+    <span class="sr-only">
+        Enter a case number, or a citation number, or a cross reference number.
+    </span>
+    
+    <div class="row">
+
+        <div class="col-xs-12 col-sm-2" role="presentation" aria-hidden="true">
+            <label class="text-muted pad-top-4 text-nowrap">Case Number</label>
+        </div>
+
+        <div class="col-xs-11 col-xs-offset-1 col-sm-4 col-sm-offset-0 col-md-4 col-lg-3">
+            <span class="sr-only" data-bind="labelFor: model.CaseNum">Case Number</span>
+            <input type="text" id="SearchCaseNumber" class="form-control" placeholder="case number" data-bind="textbox: { value: model.CaseNum, maxLen: 30, onEnter: $parent.searchClick }, focus: true" autocomplete="on">
+        </div>
+    </div>
+
+    <p class="clearfix"></p>
+
+    <div class="row">
+        <div class="col-xs-12">
+            <span class="text-muted text-nowrap">-or-</span>
+        </div>
+    </div>
+
+    <p class="clearfix"></p>
+
+    <div class="row">
+
+        <div class="col-xs-12 col-sm-2 col-md-2" role="presentation" aria-hidden="true">
+            <label class="text-muted pad-top-4 text-nowrap">Citation Number</label>
+        </div>
+
+        <div class="col-xs-11 col-xs-offset-1 col-sm-4 col-sm-offset-0 col-md-4 col-lg-3">
+            <span class="sr-only" data-bind="labelFor: model.CiteNum">Citation Number</span>
+            <input type="text" class="form-control" placeholder="citation number" data-bind="textbox: { value: model.CiteNum, maxLen: 30, onEnter: $parent.searchClick }">
+        </div>
+    </div>
+
+    <p class="clearfix"></p>
+
+    <div class="row">
+        <div class="col-xs-12">
+            <span class="text-muted text-nowrap">-or-</span>
+        </div>
+    </div>
+
+    <p class="clearfix"></p>
+
+    <div class="row">
+
+        <div class="col-xs-12 col-sm-2 col-md-2" role="presentation" aria-hidden="true">
+            <label class="text-muted pad-top-4 text-nowrap">Cross Reference</label>
+        </div>
+
+        <div class="col-xs-11 col-xs-offset-1 col-sm-4 col-sm-offset-0 col-md-4 col-lg-3">
+            <span class="sr-only" data-bind="labelFor: model.CrossRefNum">Cross Reference Number</span>
+            <input type="text" class="form-control" placeholder="cross reference number" data-bind="textbox: { value: model.CrossRefNum, maxLen: 30, onEnter: $parent.searchClick }">
+        </div>
+    </div>
+        
+</script>
+
+<script type="text/html" id="tmplByAttorney">
+
+    <div class="row">
+
+        <div class="col-xs-12 col-sm-2" role="presentation" aria-hidden="true">
+            <label class="hidden-xs text-muted">Attorney</label>
+            <label class="hidden-sm hidden-md hidden-lg text-muted">Attorney</label>
+        </div>
+
+        <div class="col-xs-11 col-xs-offset-1 col-sm-3 col-sm-offset-0">
+            <span data-bind="labelFor: model.Last">Last</span>
+            <input type="text" class="form-control" placeholder="last name" data-bind="textbox: { value: model.Last, maxLen: 40, onEnter: $parent.searchClick }, focus: true">
+        </div>
+
+        <p class="clearfix-xs"></p>
+
+        <div class="col-xs-11 col-xs-offset-1 col-sm-3 col-sm-offset-0">
+            <span data-bind="labelFor: model.First">First</span>
+            <input type="text" class="form-control" placeholder="first name or initial" data-bind="textbox: { value: model.First, maxLen: 40, onEnter: $parent.searchClick }">
+        </div>
+
+        <p class="clearfix-xs"></p>
+
+        <div class="col-xs-11 col-xs-offset-1 col-sm-3 col-sm-offset-0">
+            <span data-bind="labelFor: model.Middle">Middle</span>
+            <input type="text" class="form-control" placeholder="middle name or initial" data-bind="textbox: { value: model.Middle, maxLen: 40, onEnter: $parent.searchClick }">
+        </div>        
+    </div>
+
+    <p class="clearfix"></p>
+
+    <div class="row">
+        <div class="col-xs-12">
+            <span class="text-muted text-nowrap">-or-</span>
+        </div>
+    </div>
+
+    <p class="clearfix"></p>
+
+    <div class="row">
+
+        <div class="col-xs-12 col-sm-2" role="presentation" aria-hidden="true">
+            <label class="text-muted pad-top-4">Number</label>
+        </div>
+
+        <div class="col-xs-11 col-xs-offset-1 col-sm-3 col-sm-offset-0 col-md-3">
+            <span class="sr-only" data-bind="labelFor: model.BarNum">Attorney / Bar Number</span>
+            <input type="text" class="form-control" placeholder="atty / bar number" data-bind="textbox: { value: model.BarNum, maxLen: 20, onEnter: $parent.searchClick }">
+        </div>
+    </div>
+    
+</script>
+
+<script type="text/html" id="tmplByParty">
+
+    <div class="row">
+
+        <div class="col-xs-12 col-sm-2" role="presentation" aria-hidden="true">
+            <label class="hidden-xs text-muted">Person</label>
+            <label class="hidden-sm hidden-md hidden-lg text-muted">Person</label>
+        </div>
+
+        <div class="col-xs-11 col-xs-offset-1 col-sm-3 col-sm-offset-0">
+            <span data-bind="labelFor: model.Last">Last</span>
+            <input type="text" class="form-control" placeholder="last name" data-bind="textbox: { value: model.Last, maxLen: 40, onEnter: $parent.searchClick }, focus: true">
+        </div>
+
+        <p class="clearfix-xs"></p>
+
+        <div class="col-xs-11 col-xs-offset-1 col-sm-3 col-sm-offset-0">
+            <span data-bind="labelFor: model.First">First</span>
+            <input type="text" class="form-control" placeholder="first name / initial" data-bind="textbox: { value: model.First, maxLen: 40, onEnter: $parent.searchClick }">
+        </div>
+
+        <p class="clearfix-xs"></p>
+
+        <div class="col-xs-11 col-xs-offset-1 col-sm-3 col-sm-offset-0">
+            <span data-bind="labelFor: model.Middle">Middle</span>
+            <input type="text" class="form-control" placeholder="middle name / initial" data-bind="textbox: { value: model.Middle, maxLen: 40, onEnter: $parent.searchClick }">
+        </div>
+
+    </div>
+
+    <p class="clearfix"></p>
+
+    <div class="row">
+        <div class="col-xs-11 col-xs-offset-1 col-sm-3 col-sm-offset-2">
+            <span data-bind="labelFor: model.DoBStart">Birth Date</span>
+            <input type="text" class="form-control" placeholder="mm/dd/yyyy" data-bind="datebox: { value: model.DoBStart, mask: '99/99/9999', onEnter: $parent.searchClick }">
+        </div>
+    </div>
+
+    <p class="clearfix"></p>
+
+    <div class="row">
+        <div class="col-xs-12">
+            <span class="text-muted text-nowrap">-or-</span>
+        </div>
+    </div>
+
+    <p class="clearfix"></p>
+
+    <div class="row">
+
+        <div class="col-xs-12 col-sm-2" role="presentation" aria-hidden="true">
+            <label class="text-muted pad-top-4">Business</label>
+        </div>
+
+        <div class="col-xs-11 col-xs-offset-1 col-sm-6 col-sm-offset-0">
+            <span class="sr-only" data-bind="labelFor: model.CrossRefNum">Business Name</span>
+            <input type="text" class="form-control" placeholder="business / organization name" data-bind="textbox: { value: model.Business, maxLen: 800, onEnter: $parent.searchClick }">
+        </div>
+    </div>
+        
+</script>
+
+<!-- #endregion SearchBy Templates -->
+
+<!-- /ko -->
+<!-- /ko -->
+</div>
+
+<!-- #region Google Analytics -->
+
+<script type="text/javascript">try { (function (i, s, o, g, r, a, m) {   i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {       (i[r].q = i[r].q || []).push(arguments)   }, i[r].l = 1 * new Date(); a = s.createElement(o),   m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m) })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga'); ga('create', 'UA-4554213-81', 'auto'); ga('send', 'pageview'); } catch(gx) { } </script>
+<!-- #endregion Google Analytics -->
+
+<!-- #endregion Content Body -->
+
+    <!-- #endregion Body -->
+
+    <!-- #region Footer -->
+    <footer class="footer hidden-print">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-xs-12 col-md-3">
+
+                    <div class="row">
+
+                        <div class="col-xs-12 col-sm-6 col-md-12">
+                            <a class="bold" href="http://www.in.gov/judiciary/3681.htm" target="_blank" title="Learn how to subscribe to updates from Indiana Courts">
+                                <div class="media">
+                                    <div class="media-left media-middle">
+                                        <span class="icon32 rss">&nbsp;</span>
+                                    </div>
+                                    <div class="media-body">
+                                        <span class="small">
+                                            Subscribe to content by RSS or Email
+                                        </span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <p class="clearfix-xs clearfix-md clearfix-lg"></p>
+
+                        <div class="col-xs-12 col-sm-6 col-md-12">
+                            <a class="bold" href="http://www.twitter.com/incourts" target="_blank">
+                                <div class="media">
+                                    <div class="media-left media-middle">
+                                        <span class="icon32 twitter"></span>
+                                    </div>
+                                    <div class="media-body">
+                                        <span class="small">
+                                            <span>Follow us on Twitter</span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <p class="clearfix-xs clearfix-sm clearfix-md clearfix-lg"></p>
+
+                        <div class="col-xs-12 col-sm-6 col-md-12">
+                            <a class="bold" href="http://www.youtube.com/incourts" target="_blank">
+                                <div class="media">
+                                    <div class="media-left media-middle">
+                                        <span class="icon32 youtube"></span>
+                                    </div>
+                                    <div class="media-body">
+                                        <span class="small">
+
+                                            <span>Indiana Courts YouTube Channel</span>
+
+                                        </span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <p class="clearfix-xs clearfix-md clearfix-lg"></p>
+
+                        <div class="col-xs-12 col-sm-6 col-md-12">
+                            <a class="bold" href="http://www.flickr.com/photos/incourts/sets/" target="_blank">
+                                <div class="media">
+                                    <div class="media-left media-middle">
+                                        <span class="icon32 flickr"></span>
+                                    </div>
+                                    <div class="media-body">
+                                        <span class="small">
+                                            <span>Get our shared photos on Flickr</span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <p class="clearfix-xs clearfix-sm"></p>
+                <p class="clearfix-xs clearfix-sm"></p>
+
+                <div class="col-xs-12 col-md-9" role="contentinfo">
+                    <div class="top">
+                        <div id="pa-footer-content">
+                            <h4>Terms of Use</h4><p class="small">Odyssey Public Access (the "MyCase" website) is a platform for online services provided by the Office of Judicial Administration (the “Office”).</p><p class="small">Electronic access to court information is restricted by federal and state law in addition to court rules and orders. Information on this site is made available as a public service pursuant to order of the Indiana Supreme Court.</p><p class="small">Information displayed on this site is not to be considered or used as an official court record and may contain errors or omissions. Accuracy of the information is not warranted. Official records of court proceedings may only be obtained directly from the court maintaining a particular record.</p><p class="small"><a href="http://www.in.gov/judiciary/2984.htm" target="_blank">Read the complete terms of use&nbsp;»</a>
+                        </p></div>  
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- #endregion Footer -->
+
+
+
+</body></html>
