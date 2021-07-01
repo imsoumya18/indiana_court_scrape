@@ -24,14 +24,14 @@ cases = []
 
 driver = webdriver.Chrome('chromedriver.exe')
 driver.maximize_window()
-driver.get('https://chrome.google.com/webstore/detail/touch-vpn-secure-and-unli/bihmplhobchoageeokmgbdihknkjbknd?hl=en')
+driver.get('https://chrome.google.com/webstore/detail/vpn-free-betternet-unlimi/gjknjjomckknofjidppipffbpoekiipm?hl=en')
 input('Done?')
 driver.get("https://public.courts.in.gov/mycase#/vw/Search")
-driver.find_element_by_id('SearchCaseNumber').send_keys('02D08-20*')
+driver.find_element_by_id('SearchCaseNumber').send_keys('08d01-0*')
 driver.find_element_by_xpath('//button[contains(text(),"Search")]').click()
-time.sleep(5)
+time.sleep(7)
 count = 1
-for i in range(38):
+for i in range(36):
     try:
         for j in driver.find_elements_by_xpath('//span[@title="Case Number"]'):
             print(str(count) + '. ' + j.text)
