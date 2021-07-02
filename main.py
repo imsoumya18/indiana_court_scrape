@@ -27,11 +27,11 @@ driver.maximize_window()
 driver.get('https://chrome.google.com/webstore/detail/vpn-free-betternet-unlimi/gjknjjomckknofjidppipffbpoekiipm?hl=en')
 input('Done?')
 driver.get("https://public.courts.in.gov/mycase#/vw/Search")
-driver.find_element_by_id('SearchCaseNumber').send_keys('08d01-0*')
+driver.find_element_by_id('SearchCaseNumber').send_keys('09d01-0*')
 driver.find_element_by_xpath('//button[contains(text(),"Search")]').click()
 time.sleep(7)
 count = 1
-for i in range(36):
+for i in range(37):
     try:
         for j in driver.find_elements_by_xpath('//span[@title="Case Number"]'):
             print(str(count) + '. ' + j.text)

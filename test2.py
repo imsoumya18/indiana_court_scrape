@@ -8,7 +8,7 @@ driver.get(
     'https://chrome.google.com/webstore/detail/hotspot-shield-free-vpn-p/nlbejmccbhkncgokjcmghpfloaajcffj/related')
 input('Done?')
 total = len(x) - 1
-for i in range(740):
+for i in range(250, 500):
     if i % 30 == 0:
         time.sleep(17)
     driver.get("https://public.courts.in.gov/mycase#/vw/Search")
